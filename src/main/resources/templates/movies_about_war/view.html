@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title th:replace="fragments/head :: cranes-title"></title>
+    <th:block th:replace="fragments/head :: cranes-links"/>
+    <th:block th:replace="fragments/head :: cranes-scripts"/>
+</head>
+<body>
+<div class="container">
+    <header th:replace="fragments/header :: cranes-header"></header>
+    <div th:replace="fragments/fragments :: cranes-navigation"></div>
+    <div th:replace="fragments/fragments :: cranes-jumbotron"></div>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8 cranes-main">
+                <h2 class="pb-4 mb-4 font-italic border-bottom">Кино о войне</h2>
+                <div class="cranes-post">
+                    <div class="card mb-4">
+                        <video class="w-100" controls autoplay="autoplay">
+                            <source th:src="@{'/media/video/movies_about_war/' + ${movies_about_war.title} + '.mp4'}" type="video/mp4"/>
+                        </video>
+                        <div class="card-header">
+                            <h4 class="card-title" th:text="${movies_about_war.title}"></h4>
+                            <h6 class="card-subtitle" th:text="${movies_about_war.genre}"></h6>
+                        </div>
+                        <div class="card-body row">
+                            <div class="col">
+                                <p class="card-text text-justify" th:text="${movies_about_war.description}"></p>
+                                <p class="text-sm-left text-muted" th:text="'Актеры: ' + ${movies_about_war.cast}"></p>
+                                <p class="text-sm-left text-muted" th:text="'Режиссер: ' + ${movies_about_war.director}"></p>
+                                <p class="text-sm-left text-muted" th:text="'Сценарист: ' + ${movies_about_war.writer}"></p>
+                                <p class="text-sm-left text-muted" th:text="'Продюсер: ' + ${movies_about_war.producer}"></p>
+                                <p class="text-sm-left text-muted" th:text="'Оператор: ' + ${movies_about_war.cinematographer}"></p>
+                                <p class="text-sm-left text-muted" th:text="'Композитор: ' + ${movies_about_war.composer}"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p class="text-muted text-sm-left" th:text="${movies_about_war.country} + ' (' + ${movies_about_war.year_rlsed} + ')'"></p>
+                        </div>
+                    </div>
+                </div><!-- /.cranes-post -->
+            </div><!-- /.cranes-main -->
+            <aside th:replace="fragments/fragments :: cranes-aside"></aside>
+        </div><!-- /.row -->
+    </main><!-- /.container -->
+    <footer th:replace="fragments/footer :: footer"></footer>
+</div>
+</body>
+</html>

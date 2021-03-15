@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div class="container" th:fragment="cranes-jumbotron">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-xl-left font-weight-bolder">75 ЛЕТ</h1>
+            <h3 class="text-md-left font-weight-bold">СО ДНЯ ВЕЛИКОЙ</h3>
+            <h3 class="text-md-left font-weight-bold">ПОБЕДЫ!</h3>
+            <h1 class="text-xl-left font-weight-bolder">9 МАЯ</h1>
+        </div>
+    </div>
+</div><!-- /.cranes-jumbotron fragment -->
+
+<div class="nav-scroller py-1 mb-2" th:fragment="cranes-navigation">
+    <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" th:href="@{'/cranes/we_remember'}">Мы помним</a>
+        <a class="p-2 text-muted" th:href="@{'/cranes/war_chronology'}">Хронология войны</a>
+        <a class="p-2 text-muted" th:href="@{'/cranes/risen_from_ashes'}">Восставшие из пепла</a>
+        <a class="p-2 text-muted" th:href="@{'/cranes/stark_in_stone'}">Застывшие в камне</a>
+        <a class="p-2 text-muted" th:href="@{'/cranes/military_songs'}">Военные песни</a>
+        <a class="p-2 text-muted" th:href="@{'/cranes/movies_about_war'}">Кино о войне</a>
+        <a class="p-2 text-muted" th:href="@{'/cranes/books_about_war'}">Книги о войне</a>
+    </nav>
+</div><!-- /.cranes-navigation fragment -->
+
+<aside class="col-md-4 cranes-sidebar" th:fragment="cranes-aside">
+    <div class="p-4">
+        <h4 class="font-italic">Основные События</h4>
+        <ol class="list-unstyled mb-0">
+            <li><a th:href="${'/cranes/war_chronology/view/1'}">Начало Великой Отечественной Войны</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/17'}">Блокада Ленинграда</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/31'}">Битва за Москву</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/75'}">Ржевская Битва</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/72'}">Сталинградская Битва</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/117'}">Курская Битва</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/126'}">Смоленская Операция</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/130'}">Битва за Днепр</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/188'}">Крымская Операция</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/196'}">Белорусская Операция</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/271'}">Битва за Берлин</a></li>
+            <li><a th:href="${'/cranes/war_chronology/view/279'}">Капитуляция Германии</a></li>
+        </ol>
+    </div>
+    <div class="p-4">
+        <ol class="list-unstyled">
+            <li><a href="#">Фото военных лет</a></li>
+            <li><a href="#">Униформа Советской Армии</a></li>
+            <li><a href="#">Оружие Победы</a></li>
+            <li><a href="#">Военная Техника времен ВОВ</a></li>
+        </ol>
+    </div>
+</aside><!-- /.cranes-aside fragment -->
+</html>

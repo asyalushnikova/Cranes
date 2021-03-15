@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:fragment="cranes-title">Cranes</title>
+
+    <th:block th:fragment="cranes-links">
+        <link th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+        <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" media="screen"/>
+    </th:block>
+
+    <th:block th:fragment="cranes-scripts">
+        <script th:src="@{/webjars/jquery/3.5.1/jquery.js}"></script>
+        <script th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+    </th:block>
+</head>
+</html>

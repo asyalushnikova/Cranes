@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title th:replace="fragments/head :: cranes-title"></title>
+    <th:block th:replace="fragments/head :: cranes-links"/>
+    <th:block th:replace="fragments/head :: cranes-scripts"/>
+</head>
+<body>
+<div class="container">
+    <header th:replace="fragments/header :: cranes-header"></header>
+    <div th:replace="fragments/fragments :: cranes-navigation"></div>
+    <div th:replace="fragments/fragments :: cranes-jumbotron"></div>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8 cranes-main">
+                <h2 class="pb-4 mb-4 font-italic border-bottom">Книги о войне</h2>
+                <div class="cranes-post">
+                    <div class="card-body card-deck">
+                        <div class="col-md-4" th:each="book : ${books_about_war}">
+                            <div class="card mb-4">
+                                <img class="card-img-top" th:src="@{'/media/image/books_about_war/' + ${book.title} + '.jpg'}" alt="${books_about_war.title}"/>
+                                <div class="card-body">
+                                    <a th:href="'/cranes/books_about_war/view/' + ${book.book_id}">
+                                        <h6 class="card-title text-sm-left" th:text="${book.title}"></h6>
+                                    </a>
+                                    <p class="text-sm-left text-muted" th:text="${book.author.name}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.cranes-post -->
+            </div><!-- /.cranes-main -->
+            <aside th:replace="fragments/fragments :: cranes-aside"></aside>
+        </div><!-- /.row -->
+    </main><!-- /.container -->
+    <footer th:replace="fragments/footer :: cranes-footer"></footer>
+</div>
+</body>
+</html>

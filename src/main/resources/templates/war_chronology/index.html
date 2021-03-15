@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title th:replace="fragments/head :: cranes-title"></title>
+    <th:block th:replace="fragments/head :: cranes-links"/>
+    <th:block th:replace="fragments/head :: cranes-scripts"/>
+</head>
+<body>
+<div class="container">
+    <header th:replace="fragments/header :: cranes-header"></header>
+    <div th:replace="fragments/fragments :: cranes-navigation"></div>
+    <div th:replace="fragments/fragments :: cranes-jumbotron"></div>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8 cranes-main">
+                <h2 class="pb-4 mb-4 font-italic border-bottom">Хронология Войны</h2>
+                <div class="cranes-post">
+                    <div class="row" th:each="event : ${war_chronology}">
+                        <div class="col" th:text="${event.event_dt}"></div>
+                        <div class="col-xs-12 col-sm-6 col-md-8" th:text="${event.event}">
+                            <a ></a>
+                        </div>
+                    </div>
+                </div><!-- /.cranes-post -->
+            </div><!-- /.cranes-main -->
+            <aside th:replace="fragments/fragments :: cranes-aside"></aside>
+        </div><!-- /.row -->
+    </main><!-- /.container -->
+    <footer th:replace="fragments/footer :: cranes-footer"></footer>
+</div>
+</body>
+</html>
